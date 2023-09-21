@@ -1,6 +1,7 @@
 package HW;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,12 +14,12 @@ public class HW01 {
         driver.manage().window().maximize();
         Thread.sleep(1000);
         WebElement userName=driver.findElement(By.name("username"));
-
+        userName.sendKeys("abc");
+        Thread.sleep(1000);
+        userName.sendKeys(Keys.CONTROL+"a");
         userName.sendKeys("Admin");
-
         WebElement password= driver.findElement(By.name("password"));
         password.sendKeys("admin123");
-
         WebElement loginBtn=driver.findElement(By.tagName("button"));
         loginBtn.click();
 

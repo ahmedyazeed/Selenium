@@ -30,6 +30,12 @@ public class LocatorsExamples {
         String msg=welcomeMsg.getText();
         System.out.println("the message is "+msg);
 
+         /*       if clear() command not work , we will discuss in class why it might not work on some pages
+                the alternative to clear is
+
+        userName.sendKeys(Keys.CONTROL + "a");
+        userName.sendKeys(Keys.DELETE);*/
+
 
 
 

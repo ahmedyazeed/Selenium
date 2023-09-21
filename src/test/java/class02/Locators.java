@@ -1,6 +1,7 @@
 package class02;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -35,6 +36,12 @@ public class Locators {
 
         WebElement clickHere=driver.findElement(By.partialLinkText("Here."));
         clickHere.click();
+
+ /*       if clear() command not work , we will discuss in class why it might not work on some pages
+                the alternative to clear is
+
+        userName.sendKeys(Keys.CONTROL + "a");
+        userName.sendKeys(Keys.DELETE);*/
 
 
 

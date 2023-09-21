@@ -24,6 +24,12 @@ public class FaceBookExample {
         WebElement loginBtn= driver.findElement(By.name("login"));
         loginBtn.click();
 
+         /*       if clear() command not work , we will discuss in class why it might not work on some pages
+                the alternative to clear is
+
+        userName.sendKeys(Keys.CONTROL + "a");
+        userName.sendKeys(Keys.DELETE);*/
+
 
 
 

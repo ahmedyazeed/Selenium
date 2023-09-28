@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class HW02P2 {
+public class HW02T2 {
     public static void main(String[] args) {
         WebDriver driver=new ChromeDriver();
         driver.get("https://demoqa.com/text-box");

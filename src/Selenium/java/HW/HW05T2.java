@@ -4,46 +4,32 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.Set;
+import org.openqa.selenium.support.ui.Select;
 
 public class HW05T2 {
-    /*HW2:
-goto gmail.com
-click on help
-click on privacy
-click on terms
-switch the focus on terms page and get the title and print on screen
-then switch the focus back to the gmail page
-and print the title of the main page on screen*/
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+/*click the checkbox
+then select the  babycat
+then enter topic name
+all of this must be done in the same order*/
         WebDriver driver=new ChromeDriver();
-        driver.get("https://www.gmail.com");
+        driver.get("http://35.175.58.98/handle-iframe.php");
         driver.manage().window().maximize();
-        WebElement helpBtn = driver.findElement(By.xpath("//a[text()='Help']"));
-        helpBtn.click();
-        WebElement privacyBtn = driver.findElement(By.xpath("//a[text()='Privacy']"));
-        privacyBtn.click();
-        WebElement termsBtn = driver.findElement(By.xpath("//a[text()='Terms']"));
-        termsBtn.click();
-        /*switch the focus on terms page and get the title and print on screen
-then switch the focus back to the gmail page
-and print the title of the main page on screen*/
-        String gmailWindowHandle = driver.getWindowHandle();
-        Set<String> allHandles = driver.getWindowHandles();
-        for ( String handle: allHandles){
-            driver.switchTo().window(handle);
-            String currentTitle = driver.getTitle();
-            if (currentTitle.equalsIgnoreCase("Google Terms of Service – Privacy & Terms – Google")){
-                break;
 
-            }
-        }System.out.println(driver.getTitle());
-        System.out.println(driver.getCurrentUrl());
-        driver.switchTo().window(gmailWindowHandle);
-        System.out.println(driver.getTitle());
-        System.out.println(driver.getCurrentUrl());
+        driver.switchTo().frame("dropdownIframe");
 
-    }
+        WebElement DD = driver.findElement(By.xpath("//select[@id='animals']"));
 
-}
+        Select select = new Select(DD);
+        select.selectByVisibleText("Baby Cat");
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame(0);
+        WebElement topicTextBox = driver.findElement(By.xpath("//input[@name='Topic']"));
+        topicTextBox.sendKeys("Topic");
+
+        // The below 3 lines are not required in the task, I did them just for practice
+        driver.switchTo().frame(0);
+        WebElement innerFrameCheckBox = driver.findElement(By.xpath("//input[@type='checkbox']"));
+        innerFrameCheckBox.click();
+
+    }}

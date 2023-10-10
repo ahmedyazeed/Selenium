@@ -21,15 +21,17 @@ all of this must be done in the same order*/
         WebElement DD = driver.findElement(By.xpath("//select[@id='animals']"));
 
         Select select = new Select(DD);
+
         select.selectByVisibleText("Baby Cat");
         driver.switchTo().defaultContent();
         driver.switchTo().frame(0);
         WebElement topicTextBox = driver.findElement(By.xpath("//input[@name='Topic']"));
-        topicTextBox.sendKeys("Topic");
+        topicTextBox.sendKeys("Yasser");
 
         // The below 3 lines are not required in the task, I did them just for practice
         driver.switchTo().frame(0);
         WebElement innerFrameCheckBox = driver.findElement(By.xpath("//input[@type='checkbox']"));
         innerFrameCheckBox.click();
+
 
     }}

@@ -4,9 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utils.CommonMethods;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -16,7 +13,7 @@ print the rows that have status  "in progress"
 
 no use of contains method allowed
 */
-public class HW06T3 extends CommonMethods {
+public class HW07T3 extends CommonMethods {
     public static void main(String[] args) throws InterruptedException {
         String url="http://35.175.58.98/table-search-filter-demo.php";
         String browser="chrome";

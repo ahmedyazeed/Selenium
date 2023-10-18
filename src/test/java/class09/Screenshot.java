@@ -22,9 +22,10 @@ public class Screenshot extends CommonMethods {
         File ss=ts.getScreenshotAs(OutputType.FILE);
 
         //then save on computer
-      //  FileUtils.copyFile(ss,new File("C:\Users\ahmed\IdeaProjects\Selenium\\abc.png"));
+        FileUtils.copyFile(ss,new File("C:\\Users\\ahmed\\IdeaProjects\\Selenium\\abc.png"));
 
-        FileUtils.copyFile(ss,new File("D:\\SDET\\test.png"));
+
+
 
     }
 }

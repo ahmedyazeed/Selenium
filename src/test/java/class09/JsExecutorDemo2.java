@@ -13,6 +13,7 @@ public class JsExecutorDemo2 extends CommonMethods {
        WebElement inputBox = driver.findElement(By.xpath("//input[@id='first_name']"));
         JavascriptExecutor js=(JavascriptExecutor)driver;
        js.executeScript("arguments[0].style.border='5px solid green'",inputBox);
+
         WebElement submitBtn = driver.findElement(By.xpath("//button[@id='submit_button']"));
         js.executeScript("arguments[0].click();",submitBtn);
 
